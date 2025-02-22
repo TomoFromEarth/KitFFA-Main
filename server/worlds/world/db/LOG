@@ -1,0 +1,5 @@
+2025/02/21-16:19:43.906152 0x205904240 Creating DB /Users/tomomilicevic/zProjects/KitFFA-main/server/worlds/world/db since it was missing.
+2025/02/21-16:19:43.936563 0x205904240 Delete type=3 #1
+2025/02/21-16:20:17.257623 0x30e6e3000 Level-0 table #5: started
+2025/02/21-16:20:17.317189 0x30e6e3000 Level-0 table #5: 410003 bytes OK
+2025/02/21-16:20:17.325344 0x30e6e3000 Delete type=0 #3
