@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnused */
+<?php
+
+/** @noinspection PhpUnused */
 
 namespace Util;
 
@@ -10,6 +12,7 @@ use pocketmine\event\player\PlayerJumpEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\DataPacket;
+use pocketmine\network\mcpe\protocol\ServerboundPacket;
 use pocketmine\player\Player;
 use Util\session\Session;
 
@@ -35,7 +38,7 @@ class PlayerListener implements Listener
             $session = Session::get($player);
             $packet = $event->getPacket();
 
-            if ($packet instanceof DataPacket && Base::getInstance()->canPerformCheck()) {
+            if ($packet instanceof ServerboundPacket && Base::getInstance()->canPerformCheck()) {
                 $session->performCheck($packet);
             }
         }

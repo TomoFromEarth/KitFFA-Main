@@ -10,6 +10,8 @@ use pocketmine\event\Event;
 use pocketmine\event\player\PlayerMoveEvent;
 use Util\session\Session;
 use Util\util\BlockUtils;
+use pocketmine\block\Block;
+use pocketmine\block\VanillaBlocks;
 
 class MoveProcessor extends Processor
 {
@@ -52,8 +54,10 @@ class MoveProcessor extends Processor
         $ices = 0;
 
         foreach (BlockUtils::getBlocksAround($player) as $block) {
-            if ($block instanceof Liquid) {
-                $liquids++;
+            if ($block instanceof Block) {
+                if ($block->getTypeId() === VanillaBlocks::WATER()->getTypeId()) {
+                    $liquids++;
+                }
             }
 
             if ($block instanceof Ladder || $block instanceof Vine) {

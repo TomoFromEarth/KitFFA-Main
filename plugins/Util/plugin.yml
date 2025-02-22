@@ -4,5 +4,5 @@ main: Util\Base
 src-namespace-prefix: Util
 
 author: MaXoooZ
-api: [ 4.0.0 ]
+api: [5.0.0]
 version: 1.0.0

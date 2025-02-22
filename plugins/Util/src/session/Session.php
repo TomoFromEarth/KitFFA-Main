@@ -6,6 +6,7 @@ use NCore\handler\SanctionAPI;
 use NCore\Util;
 use pocketmine\event\Event;
 use pocketmine\network\mcpe\protocol\DataPacket;
+use pocketmine\network\mcpe\protocol\ServerboundPacket;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
 use Util\Base;
@@ -69,7 +70,7 @@ class Session
         foreach ($this->checks as $check) {
             if ($data instanceof Event) {
                 $check->checkEvent($this, $data);
-            } else if ($data instanceof DataPacket) {
+            } else if ($data instanceof ServerboundPacket) {
                 $check->checkPacket($this, $data);
             }
         }
